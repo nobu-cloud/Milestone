@@ -1,32 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Contact</title>
-    
+    <title>Contact Page</title>
 </head>
+
 <body>
+    <!--Shared Navigation Header-->
     <header>
-    <nav>
+        <nav>
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-    </nav>    
-
-    <h1 id="heading">Contact</h1>
+        </nav>
+        <h1 id="heading"> My Portfolio</h1>
     </header>
-<main> 
-    <p class="contact-detail">
-        Email: connectwithme@gmail.com <br>
-        Phone: 123-456-7890 <br>
-        Fax: 123-456-7891 <br>
-        Address: 123 Main St, Anytown, USA 
-    </p>
-</main>
-<footer>Samrat &copy; 2026</footer>
+
+    <!--Main Content-->
+    <main>
+        <section class="contact-detail">
+            <h2>Contact Me</h2>
+            <p>Fill out the form below to get in touch with me.</p>
+
+            <form action="#" method="post" novalidate>
+                <!-- Personal Details -->
+                <fieldset class="form-group-fieldset">
+                    <legend>Personal Details</legend>
+
+                    <!-- Name Input Required -->
+                    <div class="form-field">
+                        <label for="user-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="user-name" name="name" required aria-required="true">
+                        
+                    </div>
+
+                    <!-- Optional Field -->
+                    <div class="form-field">
+                        <label for="user-phone">Phone Number <span class="Optional">(optional)</span> </label>
+                        <input type="text" id="user-phone" name="Phone">
+                    </div>
+
+                    <!-- Email Input Required with Error -->
+                    <div class="form-field has-error">
+                        <label for="user-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                        <input 
+                            type="email" 
+                            id="user-email" 
+                            name="email" 
+                            required 
+                            aria-required="true"
+                            aria-invalid="true" 
+                            aria-describedby="email-error"
+                        >
+                        <span class="error-message" id="email-error" role="alert">
+                            Please enter a valid email address (e.g., name@example.com).
+                        </span>
+                    </div>
+                </fieldset>
+
+                <!-- Query Details -->
+                <fieldset class="form-group-fieldset">
+                    <legend>Topic of Interest</legend>
+
+                    <div class="form-field-radio">
+                        <input type="radio" id="subject-general" name="subject" value="general" checked>
+                        <label for="subject-general">General Inquiry</label>
+                    </div>
+
+                    <div class="form-field-radio">
+                        <input type="radio" id="subject-project" name="subject" value="project">
+                        <label for="subject-project">Project Collaboration</label>
+                    </div>
+                </fieldset>
+
+                <!-- Message Input -->
+                <div class="form-field">
+                    <label for="user-message">Message <span class="required" aria-hidden="true">*</span></label>
+                    <textarea id="user-message" name="message" rows="7" required aria-required="true"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer>Samrat &copy; 2026</footer>
 </body>
+
 </html>
