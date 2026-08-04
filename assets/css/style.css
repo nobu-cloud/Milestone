@@ -63,7 +63,7 @@ img {
 footer {
   text-align: center;
   padding: var(--space-24);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #00000033;
   color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-top: auto;
@@ -85,7 +85,7 @@ footer {
   justify-content: center;
   gap: var(--space-8);
   padding: var(--space-16) 0;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #ffffff0d;
 }
 
 .navigation a {
@@ -108,10 +108,10 @@ footer {
   flex-wrap: wrap;
   gap: var(--space-32);
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #ffffff08;
   padding: var(--space-16);
   border-radius: var(--space-16);
-  border: 1px solid rgba(42, 210, 235, 0.2);
+  border: 1px solid #2ad2eb33;
 }
 
 .child {
@@ -159,11 +159,11 @@ footer {
 
 .hobbies li {
   padding: var(--space-8) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #ffffff1a;
 }
 
 .about-description {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #ffffff08;
   padding: var(--space-32);
   border-radius: var(--space-16);
   max-width: 800px;
@@ -172,7 +172,7 @@ footer {
 
 /* Gestalt Principles (Im guessing) */
 .contact-detail {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #ffffff08;
   padding: var(--space-32);
   border-radius: var(--space-16);
   line-height: 2;
@@ -182,7 +182,7 @@ footer {
 }
 
 .contact-detail fieldset.form-group-fieldset {
-  border: 1px solid rgba(42, 210, 235, 0.3);
+  border: 1px solid #2ad2eb4d;
   border-radius: var(--space-8);
   padding: var(--space-16);
   margin-bottom: var(--space-24);
@@ -204,7 +204,7 @@ footer {
 .form-field label {
   font-weight: 600;
   margin-bottom: var(--space-8, 8px);
-  color: var(--color-text);
+  color: var(--color-primary);
   font-size: 0.95rem;
 }
 
@@ -220,8 +220,8 @@ footer {
   padding: var(--space-8) var(--space-16);
   font-family: var(--font-body);
   font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #ffffff0d;
+  border: 1px solid #ffffff33;
   border-radius: 4px;
   color: var(--color-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -236,10 +236,12 @@ footer {
 }
 
 .form-field-radio {
+  
   display: flex;
   align-items: center;
   gap: var(--space-8);
   margin-bottom: var(--space-8);
+  
 }
 
 .form-field-radio input[type="radio"] {
@@ -250,10 +252,10 @@ footer {
 
 .form-field.has-error input {
   border: 2px solid #ff6b6b;
-  background-color: rgba(255, 107, 107, 0.08);
+  background-color: #ff6b6b14;
 }
 
-/* Error message for email field */
+/* Error message color and size for email field */
 .error-message {
   display: block;
   color: #ff6b6b;
