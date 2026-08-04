@@ -6,6 +6,7 @@
   --color-accent: #FFC02D;   
   --color-text: #FFFFFF;     
   --color-text-muted: #E2E8F0; 
+  --color-text-nav: #00A550;
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -85,7 +86,7 @@ footer {
 }
 
 .navigation a {
-  color: var(--color-text);
+  color: var(--color-text-nav);
   text-decoration: none;
   font-weight: 600;
   padding: var(--space-8) var(--space-16);
