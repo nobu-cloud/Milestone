@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 :root {
-  --color-neutral: #171946;  
-  --color-primary: #2AD2EB;  
-  --color-accent: #FFC02D;   
-  --color-text: #FFFFFF;     
-  --color-text-muted: #E2E8F0; 
-  --color-text-nav: #00A550;
+  --color-neutral: #181e24;  
+  --color-primary: #818CF8;  
+  --color-accent: #fbbf24;   
+  --color-text: #f3f4f6;     
+  --color-text-muted: #9ca3af; 
+  --color-text-nav: #4ade80;
+
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 
+  
   --space-8: 8px;
   --space-16: 16px;
   --space-24: 24px;
