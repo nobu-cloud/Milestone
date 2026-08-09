@@ -46,7 +46,7 @@ main {
 
 p {
   margin-bottom: var(--space-16);
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 1rem;
 }
 
