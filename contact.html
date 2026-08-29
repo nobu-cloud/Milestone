@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/scripts/contact.js" defer></script>
     <title>Contact Page</title>
 </head>
 
 <body>
-    <!--Shared Navigation Header-->
     <header>
         <nav>
             <ul class="navigation">
@@ -18,52 +18,45 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <h1 id="heading"> My Portfolio</h1>
+        <h1 id="heading">My Portfolio</h1>
     </header>
 
-    <!--Main Content-->
     <main>
         <section class="contact-detail">
             <h2>Contact Me</h2>
             <p>Fill out the form below to get in touch with me.</p>
 
-            <form action="#" method="post" novalidate>
+            <div id="form-success" role="alert"
+                style="display: none; color: #22c55e; font-weight: 600; margin-bottom: 16px;">
+                Thank you! Your message has been sent successfully.
+            </div>
+
+            <form id="contact-form" action="#" method="post" novalidate>
                 <!-- Personal Details -->
                 <fieldset class="form-group-fieldset">
                     <legend>Personal Details</legend>
 
-                    <!-- Name Input Required -->
-                    <div class="form-field">
+                    <div class="form-field" id="name-field">
                         <label for="user-name">Full Name <span class="required" aria-hidden="true">*</span></label>
-                        <input type="text" id="user-name" name="name" required aria-required="true">
-                        
+                        <input type="text" id="user-name" name="name" required aria-required="true"
+                            aria-describedby="name-error">
+                        <span class="error-message" id="name-error" role="alert">Please enter your full name.</span>
                     </div>
 
-                    <!-- Optional Field -->
                     <div class="form-field">
-                        <label for="user-phone">Phone Number <span class="optional">(Optional)</span> </label>
+                        <label for="user-phone">Phone Number <span class="optional">(Optional)</span></label>
                         <input type="text" id="user-phone" name="Phone">
                     </div>
 
-                    <!-- Email Input Required with Error -->
-                    <div class="form-field has-error">
+                    <div class="form-field" id="email-field">
                         <label for="user-email">Email Address <span class="required" aria-hidden="true">*</span></label>
-                        <input 
-                            type="email" 
-                            id="user-email" 
-                            name="email" 
-                            required 
-                            aria-required="true"
-                            aria-invalid="true" 
-                            aria-describedby="email-error"
-                        >
-                        <span class="error-message" id="email-error" role="alert">
-                            Please enter a valid email address (e.g., name@example.com).
-                        </span>
+                        <input type="email" id="user-email" name="email" required aria-required="true"
+                            aria-describedby="email-error">
+                        <span class="error-message" id="email-error" role="alert">Please enter a valid email address
+                            (e.g., name@example.com).</span>
                     </div>
                 </fieldset>
 
-                <!-- Query Details -->
                 <fieldset class="form-group-fieldset">
                     <legend>Topic of Interest</legend>
 
@@ -78,10 +71,12 @@
                     </div>
                 </fieldset>
 
-                <!-- Message Input -->
-                <div class="form-field">
+                <!-- Message Input Required -->
+                <div class="form-field" id="message-field">
                     <label for="user-message">Message <span class="required" aria-hidden="true">*</span></label>
-                    <textarea id="user-message" name="message" rows="7" required aria-required="true"></textarea>
+                    <textarea id="user-message" name="message" rows="7" required aria-required="true"
+                        aria-describedby="message-error"></textarea>
+                    <span class="error-message" id="message-error" role="alert">Please enter your message above.</span>
                 </div>
 
                 <button type="submit" class="submit-btn">Send Message</button>

@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 :root {
-  --color-neutral: #181e24;  
-  --color-primary: #818CF8;  
-  --color-accent: #fbbf24;   
-  --color-text: #f3f4f6;     
-  --color-text-muted: #9ca3af; 
+  --color-neutral: #181e24;
+  --color-primary: #818CF8;
+  --color-accent: #fbbf24;
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
   --color-text-nav: #22c55e;
 
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  
+
   --space-8: 8px;
   --space-16: 16px;
   --space-24: 24px;
@@ -35,7 +35,6 @@ body {
   flex-direction: column;
 }
 
-/* Base Mobile Styles (under 768px / down to 320px) */
 main {
   flex: 1;
   padding: var(--space-16);
@@ -118,11 +117,9 @@ footer {
 
 .child {
   flex: 1;
-  /* Reduced from 280px to fix overflow on 320px screens with 16px padding */
-  min-width: 240px; 
+  min-width: 240px;
 }
 
-/* Tablet styles (768px and up) */
 @media (min-width: 768px) {
   main {
     padding: var(--space-32) var(--space-24);
@@ -172,7 +169,6 @@ footer {
   margin: 0 auto;
 }
 
-/* Gestalt Principles (Im guessing) */
 .contact-detail {
   background-color: #ffffff08;
   padding: var(--space-32);
@@ -246,7 +242,7 @@ footer {
   align-items: center;
   gap: var(--space-8);
   margin-bottom: var(--space-8);
-  
+
 }
 
 .form-field-radio input[type="radio"] {
@@ -260,16 +256,18 @@ footer {
   background-color: #ff6b6b14;
 }
 
-/* Error message color and size for email field */
 .error-message {
-  display: block;
+  display: none;
   color: #ff6b6b;
   font-size: 0.875rem;
   font-weight: 600;
   margin-top: var(--space-8);
 }
 
-/* Action Button */
+.form-field.has-error .error-message {
+  display: block;
+}
+
 .submit-btn {
   background-color: var(--color-primary);
   color: var(--color-neutral);
@@ -284,7 +282,22 @@ footer {
   width: 100%;
 }
 
-/* Color changes when hovering */
 .submit-btn:hover {
   background-color: var(--color-accent);
+}
+
+.error-message {
+  display: none;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+.form-field.has-error .error-message {
+  display: block;
+}
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: #ef4444;
 }
