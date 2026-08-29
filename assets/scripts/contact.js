@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(nameInput, errorSpan, "Please enter your full name.");
             return false;
         } else if (words.length < 2) {
-            showError(nameInput, errorSpan, "Please enter both first and last name (e.g. John Doe).");
+            showError(nameInput, errorSpan, "❗ Please enter your first and last name (e.g. John Doe).");
             return false;
         } else {
             clearError(nameInput);
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(emailInput, errorSpan, "Please enter an email address.");
             return false;
         } else if (!hasValidDomain) {
-            showError(emailInput, errorSpan, "Please enter a valid email address");
+            showError(emailInput, errorSpan, "⚠️ Please enter a valid email address (eg., user@domain.com");
             return false;
         } else {
             clearError(emailInput);
@@ -112,8 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (messageValue === "") {
             showError(messageInput, errorSpan, "Please enter a message.");
             return false;
-        } else if (wordCount < 50) {
-            showError(messageInput, errorSpan, `Your message must be at least 50 words. Current count: ${wordCount} word(s).`);
+        } else if (wordCount < 25) {
+            showError(messageInput, errorSpan, `Your message must be at least 25 words. 📝Current count: ${wordCount} word(s).`);
             return false;
         } else {
             clearError(messageInput);
@@ -166,7 +166,7 @@ if (mainContent) {
     factContainer.style.marginTop = "24px";
     factContainer.style.textAlign = "center";
 
-    factContainer.innerHTML = "<h3>💡 Tech Fact of the Day</h3><p id='fact-text'>Loading fact...</p>";
+    factContainer.innerHTML = "<h3>⚙ Tech Fact of the Day</h3><p id='fact-text'>Loading fact...</p>";
     mainContent.appendChild(factContainer);
 
     fetch("https://uselessfacts.jsph.pl/api/v2/facts/random")
