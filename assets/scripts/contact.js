@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const validDomains = ["@yahoo.com", "@gmail.com", "@live.com", "@hotmail.com", "@icloud.com", "@protonmail.com", "@outlook.com", "@aol.com", "@proton.me", "tutanota.com"];
+    const validDomains = ["@yahoo.com", "@gmail.com", "@live.com", "@hotmail.com", "@icloud.com", "@protonmail.com", "@outlook.com", "@aol.com", "@proton.me", "@tutanota.com", "@tuta.com"];
 
     const nameInput = document.querySelector("#user-name");
     const emailInput = document.querySelector("#user-email");
