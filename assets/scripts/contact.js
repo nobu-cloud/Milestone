@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const form = document.querySelector("#contact-form");
 
     if (form) {
         const toggleBtn = document.createElement("button");
         toggleBtn.type = "button";
         toggleBtn.innerText = "Show Office Hours & Info";
-        toggleBtn.style.backgroundColor = "#818CF8";
-        toggleBtn.style.color = "#181e24";
+        toggleBtn.style.backgroundColor = "var(--color-primary)";
+        toggleBtn.style.color = "#ffffff";
         toggleBtn.style.border = "none";
         toggleBtn.style.padding = "10px 16px";
         toggleBtn.style.marginBottom = "20px";
         toggleBtn.style.borderRadius = "8px";
         toggleBtn.style.fontWeight = "600";
+        toggleBtn.style.cursor = "pointer";
         toggleBtn.style.width = "100%";
 
         const infoBox = document.createElement("div");
         infoBox.style.display = "none";
         infoBox.style.padding = "12px 16px";
         infoBox.style.marginBottom = "20px";
-        infoBox.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
-        infoBox.style.border = "1px solid rgba(42, 210, 235, 0.2)";
+        infoBox.style.backgroundColor = "var(--color-bg)";
+        infoBox.style.border = "1px solid var(--color-border)";
         infoBox.style.borderRadius = "8px";
         infoBox.style.fontSize = "0.95rem";
         infoBox.innerHTML = "<p style='margin:0;'><strong>Office Hours:</strong> Monday & Wednesday, 6:00 PM to 7:00 PM PST<br><strong>Location:</strong> Dev 140, Auditorium, CampusWire</p>";
@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const validDomains = ["@yahoo.com", "@gmail.com", "@live.com", "@hotmail.com", "@icloud.com", "@protonmail.com", "@outlook.com", "@aol.com", "@proton.me", "@tutanota.com", "@tuta.com"];
-
     const nameInput = document.querySelector("#user-name");
     const emailInput = document.querySelector("#user-email");
     const messageInput = document.querySelector("#user-message");
@@ -57,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         inputElement.setAttribute("aria-invalid", "true");
     }
 
-
     function clearError(inputElement) {
         const container = inputElement.closest(".form-field");
         if (container) {
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         inputElement.removeAttribute("aria-invalid");
     }
-
 
     function validateName() {
         const nameValue = nameInput.value.trim();
@@ -76,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(nameInput, errorSpan, "Please enter your full name.");
             return false;
         } else if (words.length < 2) {
-            showError(nameInput, errorSpan, "❗ Please enter your first and last name (e.g. John Doe).");
+            showError(nameInput, errorSpan, "Please enter your first and last name (e.g., John Doe).");
             return false;
         } else {
             clearError(nameInput);
@@ -84,18 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
     function validateEmail() {
         const emailValue = emailInput.value.trim().toLowerCase();
         const errorSpan = document.querySelector("#email-error");
 
-        const hasValidDomain = validDomains.some(domain => emailValue.endsWith(domain));
+        const validDomainRegex = /^[^\s@]+@[^\s@]+\.com$/i;
 
         if (emailValue === "") {
             showError(emailInput, errorSpan, "Please enter an email address.");
             return false;
-        } else if (!hasValidDomain) {
-            showError(emailInput, errorSpan, "⚠️ Please enter a valid email address (eg., user@domain.com");
+        } else if (!validDomainRegex.test(emailValue)) {
+            showError(emailInput, errorSpan, "Please enter a valid email address containing '@' and ending with '.com'.");
             return false;
         } else {
             clearError(emailInput);
@@ -113,14 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(messageInput, errorSpan, "Please enter a message.");
             return false;
         } else if (wordCount < 25) {
-            showError(messageInput, errorSpan, `Your message must be at least 25 words. 📝Current count: ${wordCount} word(s).`);
+            showError(messageInput, errorSpan, `Your message must be at least 25 words. Current count: ${wordCount} word(s).`);
             return false;
         } else {
             clearError(messageInput);
             return true;
         }
     }
-
 
     if (nameInput) {
         nameInput.addEventListener("input", validateName);
@@ -131,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (messageInput) {
         messageInput.addEventListener("input", validateMessage);
     }
-
 
     if (form) {
         form.addEventListener("submit", function (event) {
@@ -155,18 +148,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 const mainContent = document.querySelector("main");
 if (mainContent) {
     const factContainer = document.createElement("div");
-    factContainer.style.backgroundColor = "#ffffff08";
-    factContainer.style.border = "1px solid #2ad2eb33";
+    factContainer.style.backgroundColor = "var(--color-surface)";
+    factContainer.style.border = "1px solid var(--color-border)";
     factContainer.style.borderRadius = "8px";
     factContainer.style.padding = "16px";
     factContainer.style.marginTop = "24px";
     factContainer.style.textAlign = "center";
 
-    factContainer.innerHTML = "<h3>⚙ Tech Fact of the Day</h3><p id='fact-text'>Loading fact...</p>";
+    factContainer.innerHTML = "<h3>Tech Fact of the Day</h3><p id='fact-text' style='margin: 8px 0 0 0;'>Loading fact...</p>";
     mainContent.appendChild(factContainer);
 
     fetch("https://uselessfacts.jsph.pl/api/v2/facts/random")
@@ -183,4 +175,4 @@ if (mainContent) {
             console.error("Fetch error:", error);
             document.querySelector("#fact-text").innerText = "Could not load fact right now. Check back later!";
         });
-};
+}

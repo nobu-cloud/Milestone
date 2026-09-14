@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 :root {
-  --color-neutral: #181e24;
-  --color-primary: #818CF8;
-  --color-accent: #fbbf24;
-  --color-text: #f3f4f6;
-  --color-text-muted: #9ca3af;
-  --color-text-nav: #22c55e;
-
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-primary: #1e40af;
+  --color-accent: #0284c7;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-nav: #0f172a;
+  --color-border: #cbd5e1;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
-
 
   --space-8: 8px;
   --space-16: 16px;
@@ -26,7 +28,7 @@
 }
 
 body {
-  background-color: var(--color-neutral);
+  background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -51,7 +53,7 @@ p {
 
 h2 {
   font-family: var(--font-heading);
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: var(--space-16);
 }
 
@@ -64,10 +66,11 @@ img {
 footer {
   text-align: center;
   padding: var(--space-24);
-  background-color: #00000033;
+  background-color: var(--color-surface);
   color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-top: auto;
+  border-top: 1px solid var(--color-border);
 }
 
 #heading {
@@ -86,7 +89,8 @@ footer {
   justify-content: center;
   gap: var(--space-8);
   padding: var(--space-16) 0;
-  background-color: #ffffff0d;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navigation a {
@@ -94,13 +98,13 @@ footer {
   text-decoration: none;
   font-weight: 600;
   padding: var(--space-8);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-radius: var(--space-8);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .navigation a:hover {
-  color: var(--color-neutral);
+  color: var(--color-surface);
   background-color: var(--color-primary);
 }
 
@@ -109,10 +113,10 @@ footer {
   flex-wrap: wrap;
   gap: var(--space-32);
   align-items: center;
-  background-color: #ffffff08;
+  background-color: var(--color-surface);
   padding: var(--space-16);
   border-radius: var(--space-16);
-  border: 1px solid #2ad2eb33;
+  border: 1px solid var(--color-border);
 }
 
 .child {
@@ -140,7 +144,6 @@ footer {
   }
 }
 
-/* Desktop styles (1200px and up) */
 @media (min-width: 1200px) {
   #heading {
     font-size: 2.5rem;
@@ -158,29 +161,31 @@ footer {
 
 .hobbies li {
   padding: var(--space-8) 0;
-  border-bottom: 1px solid #ffffff1a;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .about-description {
-  background-color: #ffffff08;
+  background-color: var(--color-surface);
   padding: var(--space-32);
   border-radius: var(--space-16);
   max-width: 800px;
   margin: 0 auto;
+  border: 1px solid var(--color-border);
 }
 
 .contact-detail {
-  background-color: #ffffff08;
+  background-color: var(--color-surface);
   padding: var(--space-32);
   border-radius: var(--space-16);
-  line-height: 2;
-  font-size: 1.1rem;
+  line-height: 1.8;
+  font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  border: 1px solid var(--color-border);
 }
 
 .contact-detail fieldset.form-group-fieldset {
-  border: 1px solid #2ad2eb4d;
+  border: 1px solid var(--color-border);
   border-radius: var(--space-8);
   padding: var(--space-16);
   margin-bottom: var(--space-24);
@@ -201,18 +206,18 @@ footer {
 
 .form-field label {
   font-weight: 600;
-  margin-bottom: var(--space-8, 8px);
-  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
   font-size: 0.95rem;
 }
 
 .required {
-  color: #ff6b6b;
+  color: var(--color-error);
   margin-left: 2px;
 }
 
 .optional {
-  color: var(--color-text-nav);
+  color: var(--color-text-muted);
 }
 
 .form-field input[type="text"],
@@ -222,8 +227,8 @@ footer {
   padding: var(--space-8) var(--space-16);
   font-family: var(--font-body);
   font-size: 1rem;
-  background-color: #ffffff0d;
-  border: 1px solid #ffffff33;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   color: var(--color-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -232,7 +237,7 @@ footer {
 .form-field input:focus,
 .form-field textarea:focus,
 .submit-btn:focus {
-  outline: 2px solid var(--color-text-nav);
+  outline: 2px solid var(--color-accent);
   outline-offset: 1px;
   border-color: var(--color-primary);
 }
@@ -242,7 +247,6 @@ footer {
   align-items: center;
   gap: var(--space-8);
   margin-bottom: var(--space-8);
-
 }
 
 .form-field-radio input[type="radio"] {
@@ -251,17 +255,18 @@ footer {
   height: 18px;
 }
 
-.form-field.has-error input {
-  border: 1px solid #ff6b6b;
-  background-color: #ff6b6b14;
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: var(--color-error);
+  background-color: #fef2f2;
 }
 
 .error-message {
   display: none;
-  color: #ff6b6b;
+  color: var(--color-error);
   font-size: 0.875rem;
   font-weight: 600;
-  margin-top: var(--space-8);
+  margin-top: 4px;
 }
 
 .form-field.has-error .error-message {
@@ -270,7 +275,7 @@ footer {
 
 .submit-btn {
   background-color: var(--color-primary);
-  color: var(--color-neutral);
+  color: #ffffff;
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
@@ -278,26 +283,10 @@ footer {
   border: none;
   border-radius: var(--space-8);
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease;
   width: 100%;
 }
 
 .submit-btn:hover {
   background-color: var(--color-accent);
-}
-
-.error-message {
-  display: none;
-  color: #ef4444;
-  font-size: 0.875rem;
-  margin-top: 4px;
-}
-
-.form-field.has-error .error-message {
-  display: block;
-}
-
-.form-field.has-error input,
-.form-field.has-error textarea {
-  border-color: #ef4444;
 }
