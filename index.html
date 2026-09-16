@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Home Page</title>
+    <title>Samrat Rai | Web Developer & Security Specialist</title>
 </head>
 
 <body>
-    <!--Share Navigation Header-->
     <header>
         <nav>
             <ul class="navigation">
@@ -18,31 +17,108 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <h1 id="heading"> My Portfolio</h1>
-
+        <h1 id="heading">Samrat Rai</h1>
     </header>
-    <!--Main Content-->
+
     <main>
-        <!--Section-->
-        <section>
-            <div class="parent">
-                <div class="child">
-                    <h2 style="margin: 0;">My hobbies</h2>
+        <section class="about-description" style="text-align: center; margin-bottom: 32px;">
+            <h2>Web Developer & Security Specialist</h2>
+            <p>I build clean, accessible, and secure digital experiences. Blending front-end design with a background in
+                incident response, OSINT investigations, and digital governance.</p>
+            <p style="margin-bottom: 0;">
+                <a href="contact.html" aria-label="click here to send me a message"
+                    style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get in touch</a>
+                or explore my key focus areas below.
+            </p>
+        </section>
+
+        <section class="parent" style="margin-bottom: 32px;">
+            <!-- Column 1: Technical Core Container -->
+            <div class="child">
+                <div class="card-container">
+                    <h2 style="margin-top: 0;">Technical Core</h2>
                     <ul class="hobbies">
-                        <li>Riding my Motorcycle</li>
-                        <li>Playing Video Games</li>
-                        <li>Creating websites</li>
-                        <li>Working Out</li>
-                        <li>Learning New Things</li>
+                        <li>
+                            <strong>Frontend Development:</strong> HTML, CSS (Flexbox/Grid, CSS Variables), Vanilla
+                            JavaScript (DOM Manipulation, Event Handling)
+                        </li>
+                        <li>
+                            <strong>Asynchronous APIs & Data:</strong> REST API integration using <code>fetch()</code>,
+                            JSON parsing, asynchronous UI updates
+                        </li>
+                        <li>
+                            <strong>Accessibility & Standards:</strong> WCAG compliance guidelines, semantic markup
+                            structure, fully responsive mobile-first design
+                        </li>
+                        <li>
+                            <strong>Security & Threat Analysis:</strong> Incident response workflows, threat detection,
+                            system log monitoring, security updates
+                        </li>
+                        <li>
+                            <strong>OSINT & Digital Rights:</strong> Open-source intelligence tools, network tracing,
+                            domain infrastructure mapping, data governance, and more.
+                        </li>
+                        <li>
+                            <strong>Environments & Tooling:</strong> Git, GitHub Pages deployment, Linux (Ubuntu, Kali)
+                            /
+                            Windows environments
+                        </li>
                     </ul>
                 </div>
-                <img src="assets/images/work_out.webp" alt="An AI generated image showing a man doing lunges">
-            
             </div>
 
+            <div class="child">
+                <div class="card-container">
+                    <h2 style="margin-top: 0;">Experience Snapshot</h2>
+                    <ul class="hobbies">
+                        <li>
+                            <strong>Web Engineering Projects:</strong> Built responsive, accessible web pages featuring
+                            dynamic DOM manipulation, API integrations, and robust user-side form validation.
+                        </li>
+                        <li>
+                            <strong>Asynchronous Web Systems:</strong> Implemented real-time input handling, custom
+                            field validation routines, and REST API fetching for live data displays.
+                        </li>
+                        <li>
+                            <strong>Accessible UI Architecture:</strong> Designed clean layout interfaces prioritizing
+                            WCAG accessibility guidelines, cross-device responsiveness, and maintainable CSS
+                            structures.
+                        </li>
+                        <li>
+                            <strong>Cyber Security Incident Response:</strong> Interned at Live Nation, conducting
+                            real-time threat detection, monitoring log feeds, and assisting with incident triage
+                            routines globally.
+                        </li>
+                        <li>
+                            <strong>Global Content Protection:</strong> Led multi-year digital investigations for the
+                            Motion Pictures Association using OSINT methodologies to map illegal distribution and
+                            enforce rights.
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-description">
+            <h2 style="text-align: center;">Featured Projects</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px;">
+                <div
+                    style="flex: 1; min-width: 250px; border: 1px solid var(--color-border); padding: 16px; border-radius: 8px; background: var(--color-bg);">
+                    <h3>Interactive Contact System</h3>
+                    <p style="font-size: 0.9rem; margin-top: 8px;">A responsive, accessible contact form featuring
+                        real-time input validation, custom word-count checks, and dynamic API data fetching.</p>
+                </div>
+                <div
+                    style="flex: 1; min-width: 250px; border: 1px solid var(--color-border); padding: 16px; border-radius: 8px; background: var(--color-bg);">
+                    <h3>OSINT & Rights Protection Tooling</h3>
+                    <p style="font-size: 0.9rem; margin-top: 8px;">Analytical workflows and investigative methodologies
+                        for tracking digital copyright infringement and verifying data governance.</p>
+                </div>
+            </div>
         </section>
     </main>
-    <!--Footer-->
+
     <footer>Samrat &copy; 2026</footer>
 </body>
 
